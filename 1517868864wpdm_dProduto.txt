@@ -1,0 +1,10 @@
+Produto	ID_Produto	
+Macarrão	1
+Sal	2
+Soja	3
+Trigo	4
+Arroz	5
+Açúcar	6
+Cevada	7
+Milho	8
+Feijão	9
