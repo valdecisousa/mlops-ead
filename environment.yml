@@ -1,4 +1,4 @@
-name: mlops-env
+c:\Users\valt_\Downloads\train.pyname: mlops-env
 channels:
   - conda-forge
   - defaults
