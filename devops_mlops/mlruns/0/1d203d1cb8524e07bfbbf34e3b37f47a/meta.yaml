@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/valt_/OneDrive/Desktop/Pos/devops_mlops/mlruns/0/1d203d1cb8524e07bfbbf34e3b37f47a/artifacts
+end_time: 1781273901374
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d203d1cb8524e07bfbbf34e3b37f47a
+run_name: experiment_mlops_ead
+run_uuid: 1d203d1cb8524e07bfbbf34e3b37f47a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1781273894793
+status: 3
+tags: []
+user_id: valt_
