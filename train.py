@@ -71,6 +71,12 @@ def train_model(model, X_train, y_train, is_train=True):
             validation_split=0.2,
             verbose=3
         )
+         mlflow.tensorflow.log_model(
+            model,
+            artifact_path="model",
+            registered_model_name="fetal_health",
+            input_example=X_train.values[:5]
+        )
 
 
 
