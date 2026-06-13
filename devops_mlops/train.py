@@ -85,6 +85,11 @@ def train_model(model, X_train, y_train, is_train=True):
             registered_model_name="fetal_health",
             input_example=X_train[:5]
         )
+    # Encerrando o experimento no MLflow
+    mlflow.end_run()
+
+    # Encerrando a sessão no DagsHub
+    dagshub.end()
 
 if __name__ == "__main__":
     X, y = read_data()
