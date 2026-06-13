@@ -12,7 +12,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
+import dagshub
 
+# Conecta MLflow ao DagsHub
+# Username é o seu usuário do DagsHub
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'valdecisousa'
+    
+# Password deve ser o token default que você pegou nas configurações
+os.environ['MLFLOW_TRACKING_PASSWORD'] = '<a28bdc034eba4ee6c4c03eaa98bfe5bbc8c88fb4>'
+dagshub.init(repo_owner='valdecisousa', repo_name='my-first-repo', mlflow=True)
 
 def reset_seeds() -> None:
     os.environ['PYTHONHASHSEED'] = str(42)
@@ -55,7 +63,7 @@ def create_model(X):
 
 def config_mlflow():
     os.environ['MLFLOW_TRACKING_USERNAME'] = 'valdecisousa'
-    os.environ['MLFLOW_TRACKING_PASSWORD'] = '5c0a31a456aca4331ea5f29723db64366731a12a'
+    os.environ['MLFLOW_TRACKING_PASSWORD'] = 'a28bdc034eba4ee6c4c03eaa98bfe5bbc8c88fb4'  # mantenha seguro
     mlflow.set_tracking_uri('https://dagshub.com/valdecisousa/my-first-repo.mlflow')
 
     mlflow.tensorflow.autolog(log_models=True,
@@ -64,11 +72,19 @@ def config_mlflow():
 
 def train_model(model, X_train, y_train, is_train=True):
     with mlflow.start_run(run_name='experiment_mlops_ead') as run:
-        model.fit(X_train,
-                  y_train,
-                  epochs=50,
-                  validation_split=0.2,
-                  verbose=3)
+        model.fit(
+            X_train,
+            y_train,
+            epochs=50,
+            validation_split=0.2,
+            verbose=3
+        )
+        mlflow.tensorflow.log_model(
+            model,
+            artifact_path="model",
+            registered_model_name="fetal_health",
+            input_example=X_train[:5]
+        )
 
 if __name__ == "__main__":
     X, y = read_data()
