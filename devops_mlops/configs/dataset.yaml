@@ -1,0 +1,10 @@
+# configs/dataset.yaml
+path: /kaggle/working/valdecisousa/aeronaves/devops_mlops/data/processed
+train: train/images
+val: test/images
+
+names:
+  0: AirPlane
+  1: Bird
+  2: Drone
+  3: Helicopter

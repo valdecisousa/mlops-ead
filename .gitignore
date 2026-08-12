@@ -1,0 +1,13 @@
+# Projetos/arquivos fora de devops_mlops
+AutoML_com_AutoKeras.ipynb
+analiseSentimentos/
+estatistica/
+frameworksPOO/
+machine/
+pln/
+redesNeurais/
+redesNeuraisRegenerativas/
+visaoComputacional/
+__pycache__/
+testes/__pycache__/
+*.zip

@@ -1,3 +1,28 @@
-echo __pycache__/ >> .gitignore
-echo *.pyc >> .gitignore
-echo ../__pycache__/ >> .gitignore
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Pesos do YOLO
+*.pt
+best/
+runs/
+
+# Logs e artefatos de MLOps
+mlruns/
+
+# Arquivos de dados e compactados
+data/
+*.zip
+*.xlsx
+
+# Cadernos temporários ou de outras matérias
+../AutoML_com_AutoKeras.ipynb
+../analiseSentimentos/
+../estatistica/
+../frameworksPOO/
+../machine/
+../pln/
+../redesNeurais/
+../redesNeuraisRegenerativas/
+../visaoComputacional/
